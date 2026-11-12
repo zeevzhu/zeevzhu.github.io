@@ -275,3 +275,10 @@ footer{margin-top:72px;background:#000;color:#e8e8e8;border-top:4px solid var(--
 footer a{color:var(--boiler)}
 .totop{position:fixed;right:16px;bottom:16px;width:48px;height:48px;border-radius:50%;background:#000;color:var(--boiler);border:1px solid var(--boiler);font-size:19px;cursor:pointer;box-shadow:var(--shadow);display:none}
 @media (prefers-color-scheme: dark){.totop{background:var(--boiler);color:#000}}
+
+/* Earth Precision Agriculture Conference: paired talks + Session Chair badge */
+.talk-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0 12px}
+.talk-item{border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;background:var(--surface)}
+.talk-item b{display:block;font-size:16px;line-height:1.35}
+.award.chair{display:block;font-size:14.5px;padding:8px 16px;border:1px solid var(--boiler);margin-top:12px}
+@media(max-width:640px){.talk-pair{grid-template-columns:1fr}}
