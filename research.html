@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Ze Zhu — Researcher at Purdue University. Sustainable aquaculture systems, aquaponics, waste-to-protein, photobioreactors and energy modelling.">
+<link rel="icon" href="data:,">
+<title>Research — Ze Zhu | Purdue University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<!-- PURDUE INSTITUTIONAL BAR -->
+<div class="purdue-bar">
+  <div class="purdue-bar-in">
+    <a class="p-lockup" href="https://www.purdue.edu" target="_blank" rel="noopener" aria-label="Purdue University">
+      <img class="p-logo" src="assets/purdue-logo-reversed.png" alt="Purdue University">
+    </a>
+    <div class="p-right">
+      <a href="https://ag.purdue.edu" target="_blank" rel="noopener">College of Agriculture</a>
+      <span class="p-div hide-sm" aria-hidden="true"></span>
+      <a class="hide-sm" href="https://ag.purdue.edu/department/forestry-natural-resources/index.html" target="_blank" rel="noopener">Forestry &amp; Natural Resources</a>
+    </div>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html">
+      <span class="mark">ZZ</span>
+      <span><b>Zhu Research Group</b><span class="sub">Sustainable Aquaculture Systems · Purdue</span></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main" id="mainnav" aria-label="Main">
+      <a href="index.html">About</a>
+      <a href="research.html" class="active" aria-current="page">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks &amp; Service</a>
+      <a href="team.html">Team</a>
+      <a href="news.html">News</a>
+      <a href="purdue.html">At Purdue</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<!-- RESEARCH -->
+  <section id="research">
+    <div class="sec-head"><span class="no">02</span><h2>Research</h2><p>Circular production, integrated system modelling, and sensing with AI.</p></div>
+    <div class="pillars">
+      <article class="pillar">
+        <figure class="pillar-media">
+          <img class="media-main" src="assets/ras.jpg" alt="Inside a recirculating aquaculture system (RAS): blue circular tanks full of young fish, each served by an automatic feeder, with pipework and filtration overhead">
+          <img class="media-inset" src="assets/aquaponics.jpg" alt="Aquaponics inset: lettuce growing in long deep-water culture beds under suspended grow lights inside a modern aquaponics greenhouse">
+        </figure>
+        <div class="body">
+          <h3>Advanced Aquaculture &amp; Circular Bioeconomy</h3>
+          <p>We engineer production systems so that every waste stream becomes an input somewhere else, reducing aquaculture’s dependence on wild-caught fishmeal. The line runs in four parts:</p>
+          <div class="subtopics">
+            <div class="subtopic">
+              <h4><span class="sno">01</span> Zero Discharge Aquaculture System</h4>
+              <p>RAS designed to discharge nothing: water is treated and reused in place, ammonia is removed electrochemically, and nutrients are recovered rather than released.</p>
+              <p class="ref"><b>Now underway:</b> electrochemical aquaculture systems for zero discharge — saline RAS coupled to freshwater algae, harvested by electrocoagulation (USDA NIFA, Co-PI, 2026 — present)</p>
+            </div>
+            <div class="subtopic">
+              <h4><span class="sno">02</span> Off-Grid Multiloop Aquaponics</h4>
+              <p>Fish, plant and anaerobic-digestion loops coupled so that solids become biogas and biofertiliser while the system runs off-grid. Built for arid and remote sites where water and energy set the limit.</p>
+              <p class="ref"><b>Representative work:</b> near-zero-waste aquaponics with onsite anaerobic digestion (Sci. Total Environ. 2022; Resour. Conserv. Recycl. 2024); off-grid operation in “Green energy to blue food” (Energy Nexus 2026)</p>
+            </div>
+            <div class="subtopic">
+              <h4><span class="sno">03</span> Biofloc / Single Cell Protein</h4>
+              <p>Biofloc and microbial biomass grown on aquaculture effluent turn dissolved waste into single cell protein that returns as feed. Insect biorefineries handle solid wastes.</p>
+              <p class="ref"><b>Representative work:</b> microbial biomass from RAS effluent fed back to barramundi (Aquaculture 2023); waste-to-protein via microaerophilic assimilation in brackishwater RAS (J. Water Process Eng. 2026); shrimp-shell biorefinery via black soldier fly (2026)</p>
+            </div>
+            <div class="subtopic">
+              <h4><span class="sno">04</span> Microalgae</h4>
+              <p>Microalgae photobioreactors polish RAS wastewater as the loop’s final step. A full performance and LCA study is in preparation.</p>
+            </div>
+          </div>
+          <div class="tags"><span class="tag">Zero discharge</span><span class="tag">Multiloop aquaponics</span><span class="tag">Biofloc · SCP</span><span class="tag">Waste-to-protein</span><span class="tag">Anaerobic digestion</span><span class="tag">Photobioreactors</span></div>
+        </div>
+      </article>
+      <article class="pillar">
+        <img src="assets/modelling.jpg" alt="An aquaculture operations control room: an operator facing a wall of monitors with live underwater camera feeds, water-quality data and system dashboards">
+        <div class="body">
+          <h3>Integrated System Modeling</h3>
+          <p>Fish, plants, microbes, water treatment and energy are modelled as one dynamic system. Built on mass and energy balances, the models follow a design from first sketch through life-cycle assessment and techno-economic analysis, testing industrial aquaponics in arid zones, off-grid operation and climate adaptation before a tank is built.</p>
+          <ul class="work">
+            <li><b>Integrated dynamic model</b> of industrial aquaponics — environmental assessment in arid zones (Inf. Process. Agric. 2025)</li>
+            <li><b>Climate-smart dynamic models</b> for off-grid aquaponics — “Green energy to blue food” (Energy Nexus 2026)</li>
+            <li><b>LCA &amp; techno-economics</b> of photobioreactor food systems, coupled vs. decoupled (in preparation)</li>
+          </ul>
+          <div class="tags"><span class="tag">Dynamic modelling</span><span class="tag">Mass &amp; energy balances</span><span class="tag">LCA · TEA</span><span class="tag">Energy nexus</span></div>
+        </div>
+      </article>
+      <article class="pillar">
+        <img src="assets/smart-ai.jpg" alt="Farmed salmon swimming past a pair of underwater monitoring cameras mounted inside a net pen — the camera feeds that sensing and computer-vision models learn from">
+        <div class="body">
+          <h3>Smart Aquaculture Using AI</h3>
+          <p>Cameras, probes and behaviour logs produce a continuous data stream. We use it for multimodal sensing that catches nitrogen and iron stress in aquaponics before yields suffer, and for models that predict fish oxygen demand from behaviour and metabolic lag. With the MOST and COST partners, we also work on AI that transfers between farms and can be independently validated.</p>
+          <ul class="work">
+            <li><b>Multimodal sensing</b> of nutrient stress in aquaponics — Purdue leads independent validation (MOST, with the Shamir Research Institute)</li>
+            <li><b>FishBehavMet-TCN:</b> behaviour-informed prediction of fish oxygen consumption (Inf. Process. Agric. 2026)</li>
+            <li><b>Transferable &amp; trustworthy AI</b> for animal science — Secondary Proposer (COST Action OC-2026-1-30956)</li>
+          </ul>
+          <div class="tags"><span class="tag">Multimodal sensing</span><span class="tag">Computer vision</span><span class="tag">Fish behaviour &amp; welfare</span><span class="tag">Trustworthy AI</span></div>
+        </div>
+      </article>
+    </div>
+
+  </section>
+
+  <!-- PHOTO BREAK -->
+  <div class="photo-break">
+    <img src="assets/salmon-underwater.jpg" alt="Atlantic salmon swimming just below the surface in clear green water, sunlight rippling across their silver, spotted bodies">
+    <div class="pb-panel">
+      <div class="wrap">
+        <blockquote>Every output is an input <em>somewhere else</em>.</blockquote>
+        <p>Atlantic salmon, the animals at the centre of the systems we study.</p>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+<footer>
+  <div style="max-width:1280px;margin:0 auto;padding:30px 20px 0">
+    <a class="p-lockup" href="https://www.purdue.edu" target="_blank" rel="noopener" aria-label="Purdue University">
+      <img class="p-logo lg" src="assets/purdue-logo-reversed.png" alt="Purdue University">
+    </a>
+  </div>
+  <div class="foot-in">
+    <div>© 2026 Ze Zhu. All rights reserved.<br><a href="mailto:zezhu@purdue.edu">zezhu@purdue.edu</a></div>
+    <div>Department of Forestry and Natural Resources<br>Purdue University<br>West Lafayette, IN 47907</div>
+    <div><a href="https://zeevzhu.github.io">zeevzhu.github.io</a><br><a href="https://github.com/zeevzhu" target="_blank" rel="noopener">github.com/zeevzhu ↗</a></div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+</body>
+</html>
