@@ -135,13 +135,13 @@ section{padding:64px 0 8px}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
 .about-side{display:flex;flex-direction:column;gap:18px;min-width:0}
 .about-side .pi-card{height:auto}
-.edu-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow)}
+.edu-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
 .edu-card h3.subhead{margin:0 0 2px;font-size:21px}
 .edu-card .timeline{margin-top:2px}
-.edu-card .tl{padding:7px 0}
+.edu-card .tl{display:grid;grid-template-columns:86px 1fr;gap:10px;padding:5px}
 .edu-card .tl time{font-size:13.5px;padding-top:1px}
-.edu-card .tl b{font-size:16px;line-height:1.35}
-.edu-card .tl span{font-size:14px;line-height:1.5}
+.edu-card .tl b{font-size:16px;line-height:1.27}
+.edu-card .tl span{font-size:14px;line-height:1.42}
 @media(max-width:480px){.pi-links a{font-size:14px;padding:6px 8px}.edu-card .tl{grid-template-columns:96px 1fr;gap:10px}}
 .pi-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;height:100%}
 .avatar{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:top center;border:3px solid var(--boiler);background:var(--boiler);margin:0 auto 14px}
@@ -282,3 +282,4 @@ footer a{color:var(--boiler)}
 .talk-item b{display:block;font-size:16px;line-height:1.35}
 .award.chair{display:block;font-size:14.5px;padding:8px 16px;border:1px solid var(--boiler);margin-top:12px}
 @media(max-width:640px){.talk-pair{grid-template-columns:1fr}}
+@media(max-width:560px){.edu-card .tl{grid-template-columns:1fr}}
