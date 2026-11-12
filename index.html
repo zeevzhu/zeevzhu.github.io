@@ -29,7 +29,9 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.65}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--dust);color:#000}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rush);outline-offset:2px;border-radius:4px}
 a{color:var(--gold);text-underline-offset:3px}
 img{display:block;max-width:100%}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
@@ -101,7 +103,7 @@ nav.main a.cta{background:#000;color:var(--boiler);font-weight:700;margin-left:8
 .hero img{width:100%;height:min(62vh,560px);object-fit:cover}
 .hero-panel{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.88) 38%);padding:90px 0 26px;color:#fff}
 .hero-panel .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between}
-.hero h1{font-size:clamp(30px,4.6vw,50px);max-width:720px}
+.hero h1{font-size:clamp(30px,4.6vw,50px);max-width:720px;text-wrap:balance}
 .hero h1 em{font-style:italic;color:var(--dust)}
 .hero p{max-width:640px;margin:10px 0 0;color:#e9e6df;font-size:17.5px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
@@ -115,22 +117,23 @@ nav.main a.cta{background:#000;color:var(--boiler);font-weight:700;margin-left:8
 }
 
 /* ── Sections ── */
-section{padding:64px 0 8px}
+section{padding:64px 0 8px;scroll-margin-top:84px}
+@media(max-width:640px){section{scroll-margin-top:68px}}
 .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:26px}
 .sec-head h2{font-size:30px}
 .sec-head .no{font-family:"Spectral",serif;color:var(--gold);font-weight:700}
-.sec-head p{margin:0 0 0 auto;color:var(--muted);font-size:15px;max-width:420px;text-align:right}
+.sec-head p{margin:0 0 0 auto;color:var(--muted);font-size:15px;max-width:460px;text-align:right;line-height:1.5}
 @media(max-width:700px){.sec-head p{display:none}}
 
-.about-grid{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start}
+.about-grid{display:grid;grid-template-columns:340px 1fr;gap:32px;align-items:stretch}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
-.pi-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.pi-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;height:100%}
 .avatar{width:96px;height:96px;border-radius:50%;background:var(--boiler);color:#000;display:grid;place-items:center;font-family:"Spectral",serif;font-size:36px;font-weight:700;margin-bottom:14px}
 .pi-card h3{font-size:24px}
 .pi-card .role{color:var(--gold);font-weight:700;margin:4px 0 2px}
 .pi-card .dept{color:var(--muted);font-size:15px}
-.pi-links{display:grid;gap:2px;margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
-.pi-links a,.pi-links span{display:flex;justify-content:space-between;gap:10px;text-decoration:none;padding:9px 2px;min-height:40px;align-items:center;border-bottom:1px dashed var(--line);font-size:15.5px}
+.pi-links{display:flex;flex-direction:column;justify-content:space-evenly;flex:1;gap:2px;margin-top:16px;border-top:1px solid var(--line);padding-top:10px}
+.pi-links a,.pi-links span{display:flex;justify-content:space-between;gap:10px;text-decoration:none;padding:10px 2px;min-height:44px;align-items:center;border-bottom:1px dashed var(--line);font-size:15.5px}
 .pi-links a:hover{color:var(--gold)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--boiler);color:#000;border:none;border-radius:10px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;min-height:48px;text-decoration:none}
 .btn.ghost{background:transparent;color:var(--gold);border:1.5px solid var(--gold)}
@@ -142,12 +145,25 @@ section{padding:64px 0 8px}
 .tl span{color:var(--muted);font-size:15.5px}
 @media(max-width:560px){.tl{grid-template-columns:1fr;gap:2px}}
 
+/* About — right column: spacing tuned so the text block starts at the
+   profile card's top edge and its last rule ends at the card's bottom edge */
+.about-main{display:flex;flex-direction:column}
+.about-main .lead{margin:0;font-size:18.5px;line-height:1.62}
+.about-main .sub{margin:14px 0 0;color:var(--muted);line-height:1.6}
+.about-main h3.subhead{margin:22px 0 2px;font-size:21px}
+.about-main .timeline{margin-top:2px}
+.about-main .tl{padding:9.5px 0}
+.about-main .tl time{padding-top:1px}
+.about-main .tl b{line-height:1.35}
+.about-main .tl span{font-size:15px;line-height:1.5}
+.about-main .timeline:last-child .tl:last-child{border-bottom:1px solid var(--line)}
+
 /* Research pillars — first pillar carries about twice the content,
    so it gets a double-width column and the three cards land at similar heights */
 .pillars{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
 @media(max-width:900px){.pillars{grid-template-columns:1fr}}
 .pillar{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-.pillar img{height:190px;width:100%;object-fit:cover}
+.pillar img{height:190px;width:100%;object-fit:cover;flex:none}
 .pillar .body{padding:20px;display:flex;flex-direction:column;flex:1}
 .pillar .tags{margin-top:auto;padding-top:14px}
 .pillar h3{font-size:21px;margin-bottom:8px}
@@ -171,7 +187,7 @@ section{padding:64px 0 8px}
 .proj{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 @media(max-width:800px){.proj{grid-template-columns:1fr}}
 .proj article{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-.proj article img{height:190px;width:100%;object-fit:cover}
+.proj article img{height:190px;width:100%;object-fit:cover;flex:none}
 .proj .pbody{padding:18px 20px 20px}
 .proj h3{font-size:20px}
 .proj .meta{color:var(--gold);font-weight:700;font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;margin:0 0 6px}
@@ -262,8 +278,8 @@ footer a{color:var(--boiler)}
       <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
       <a href="#talks">Talks &amp; Service</a>
-      <a href="#news">News</a>
       <a href="#team">Team</a>
+      <a href="#news">News</a>
       <a href="#purdue">At Purdue</a>
       <a class="cta" href="#join">Join Us</a>
     </nav>
@@ -316,11 +332,11 @@ footer a{color:var(--boiler)}
         </div>
       </aside>
 
-      <div>
-        <p style="margin-top:0;font-size:18.5px">I lead a research programme on <strong>circular aquaculture</strong> at Purdue: recirculating aquaculture systems (RAS), aquaponics and photobioreactors, and the conversion of aquaculture waste streams into new protein. Each system is assessed as a whole, starting from mass and energy balances and continuing to life-cycle and techno-economic assessment.</p>
-        <p style="color:var(--muted)">I supervise PhD, MSc and undergraduate researchers, and teach aquaculture and aquaponics courses.</p>
+      <div class="about-main">
+        <p class="lead">I lead a research programme on <strong>circular aquaculture</strong> at Purdue: recirculating aquaculture systems (RAS), aquaponics and photobioreactors, and the conversion of aquaculture waste streams into new protein. Each system is assessed as a whole, starting from mass and energy balances and continuing to life-cycle and techno-economic assessment.</p>
+        <p class="sub">I supervise PhD, MSc and undergraduate researchers, and teach aquaculture and aquaponics courses.</p>
 
-        <h3 style="margin:26px 0 6px;font-size:21px">Education</h3>
+        <h3 class="subhead">Education</h3>
         <div class="timeline">
           <div class="tl"><time>2018 — 2023</time><div><b>Ph.D. in Aquaculture, Wageningen University</b><span>Netherlands · Advisor: Prof. Karel Keesman</span></div></div>
           <div class="tl"><time>2016 — 2018</time><div><b>M.S. in Aquaculture, Ben-Gurion University of the Negev</b><span>Israel</span></div></div>
@@ -328,7 +344,7 @@ footer a{color:var(--boiler)}
           <div class="tl"><time>2010 — 2014</time><div><b>B.Eng. in Agricultural Water Engineering, Wuhan University</b><span>China</span></div></div>
         </div>
 
-        <h3 style="margin:26px 0 6px;font-size:21px">Experience</h3>
+        <h3 class="subhead">Experience</h3>
         <div class="timeline">
           <div class="tl"><time>2025 — now</time><div><b>Researcher, Purdue University</b><span>Dept. of Forestry &amp; Natural Resources, College of Agriculture — West Lafayette, USA</span></div></div>
           <div class="tl"><time>2023 — 2025</time><div><b>Researcher / Group Leader, Ben-Gurion University of the Negev</b><span>Zuckerberg Institute for Water Research — Israel</span></div></div>
@@ -654,19 +670,9 @@ footer a{color:var(--boiler)}
     </div>
   </section>
 
-  <!-- NEWS -->
-  <section id="news">
-    <div class="sec-head"><span class="no">06</span><h2>News</h2><p>Milestones, 2025–2026.</p></div>
-    <div class="news-item"><time>Nov 2026</time><div><b>MOST international collaboration — LoI signed</b><p>Letter of Intent signed at Purdue for the multimodal-sensing aquaponics proposal with the Shamir Research Institute.</p></div></div>
-    <div class="news-item"><time>Oct 2026</time><div><b>Paper published in <i>Journal of Water Process Engineering</i></b><p>“From waste to protein via microaerophilic assimilation in brackishwater RAS” is published. DOI: <a href="https://doi.org/10.1016/j.jwpe.2026.111106" target="_blank" rel="noopener">10.1016/j.jwpe.2026.111106</a>.</p></div></div>
-    <div class="news-item"><time>Oct 2026</time><div><b>Two oral presentations accepted — Aquaculture America 2027</b><p>Abstracts #439 (waste-to-protein) and #440 (“Green Energy to Blue Food”) will be presented in Honolulu, 21–24 February 2027.</p></div></div>
-    <div class="news-item"><time>Oct 2026</time><div><b>Secondary Proposer — COST Action on AI for Animal Science</b><p>Accepted as Secondary Proposer for COST Action proposal OC-2026-1-30956 on transferable and trustworthy AI for animal science.</p></div></div>
-    <div class="news-item"><time>2025</time><div><b>Ze Zhu joins Purdue as Researcher</b><p>Appointed in the Department of Forestry and Natural Resources, College of Agriculture.</p></div></div>
-  </section>
-
   <!-- TEAM -->
   <section id="team">
-    <div class="sec-head"><span class="no">07</span><h2>Team</h2><p>Department of Forestry and Natural Resources, Purdue University.</p></div>
+    <div class="sec-head"><span class="no">06</span><h2>Team</h2><p>Department of Forestry and Natural Resources, Purdue University.</p></div>
     <div class="team-grid">
       <div class="panel">
         <h3>The group</h3>
@@ -720,6 +726,16 @@ footer a{color:var(--boiler)}
       </div>
       <p style="color:var(--muted);font-size:15px;margin-bottom:0">Graduate applicants: please mention your research line (circular bioeconomy, system modeling, or smart aquaculture &amp; AI) in your email.</p>
     </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <div class="sec-head"><span class="no">07</span><h2>News</h2><p>Milestones, 2025–2026.</p></div>
+    <div class="news-item"><time>Nov 2026</time><div><b>MOST international collaboration — LoI signed</b><p>Letter of Intent signed at Purdue for the multimodal-sensing aquaponics proposal with the Shamir Research Institute.</p></div></div>
+    <div class="news-item"><time>Oct 2026</time><div><b>Paper published in <i>Journal of Water Process Engineering</i></b><p>“From waste to protein via microaerophilic assimilation in brackishwater RAS” is published. DOI: <a href="https://doi.org/10.1016/j.jwpe.2026.111106" target="_blank" rel="noopener">10.1016/j.jwpe.2026.111106</a>.</p></div></div>
+    <div class="news-item"><time>Oct 2026</time><div><b>Two oral presentations accepted — Aquaculture America 2027</b><p>Abstracts #439 (waste-to-protein) and #440 (“Green Energy to Blue Food”) will be presented in Honolulu, 21–24 February 2027.</p></div></div>
+    <div class="news-item"><time>Oct 2026</time><div><b>Secondary Proposer — COST Action on AI for Animal Science</b><p>Accepted as Secondary Proposer for COST Action proposal OC-2026-1-30956 on transferable and trustworthy AI for animal science.</p></div></div>
+    <div class="news-item"><time>2025</time><div><b>Ze Zhu joins Purdue as Researcher</b><p>Appointed in the Department of Forestry and Natural Resources, College of Agriculture.</p></div></div>
   </section>
 
   <!-- AT PURDUE -->
@@ -782,7 +798,7 @@ footer a{color:var(--boiler)}
   window.addEventListener('scroll',function(){
     totop.style.display=window.scrollY>700?'block':'none';
     var links=nav.querySelectorAll('a[href^="#"]'), current='';
-    ['about','research','projects','publications','talks','news','team','purdue'].forEach(function(id){
+    ['about','research','projects','publications','talks','team','news','purdue'].forEach(function(id){
       var el=document.getElementById(id); if(el&&el.getBoundingClientRect().top<160) current=id;
     });
     links.forEach(function(a){ a.classList.toggle('active',a.getAttribute('href')==='#'+current); });
