@@ -87,14 +87,11 @@ h1,h2,h3{font-family:"Spectral","Noto Serif SC",serif;line-height:1.2;margin:0}
 nav.main{margin-left:auto;display:flex;gap:4px;align-items:center}
 nav.main a{color:var(--ink);text-decoration:none;font-size:16.5px;padding:10px 12px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center}
 nav.main a:hover,nav.main a.active{background:var(--surface2);color:var(--gold)}
-nav.main a.cta{background:#000;color:var(--boiler);font-weight:700;margin-left:8px}
-@media (prefers-color-scheme: dark){nav.main a.cta{background:var(--boiler);color:#000}}
 .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:9px;width:46px;height:46px;font-size:20px;color:var(--ink);cursor:pointer}
 @media(max-width:860px){
   nav.main{display:none;position:absolute;top:72px;left:0;right:0;background:var(--surface);flex-direction:column;align-items:stretch;padding:10px 16px 16px;border-bottom:1px solid var(--line)}
   nav.main.open{display:flex}
   nav.main a{padding:12px}
-  nav.main a.cta{margin:6px 0 0;justify-content:center}
   .burger{display:grid;place-items:center}
 }
 
@@ -218,7 +215,7 @@ section{padding:64px 0 8px;scroll-margin-top:84px}
 .pub-year{font-family:"Spectral",serif;font-size:23px;margin:30px 0 2px}
 .pub-year:first-of-type{margin-top:4px}
 
-/* Team + openings */
+/* Team */
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:800px){.team-grid{grid-template-columns:1fr}}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
@@ -235,9 +232,6 @@ section{padding:64px 0 8px;scroll-margin-top:84px}
 .mentor .rel{display:inline-block;background:var(--gold-soft);color:var(--gold);border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:700;margin-top:9px}
 .mentor p{color:var(--muted);font-size:15px;margin:12px 0 0;text-align:left}
 .mentor-credit{color:var(--muted);font-size:13px;margin:10px 0 0}
-.openings{background:var(--surface);border:2px solid var(--ink);border-top:6px solid var(--boiler);border-radius:var(--radius);padding:28px;margin-top:22px}
-.openings h3{font-size:24px}
-.openings p{max-width:760px}
 
 
 /* Footer (dark bar like reference) */
@@ -281,7 +275,6 @@ footer a{color:var(--boiler)}
       <a href="#team">Team</a>
       <a href="#news">News</a>
       <a href="#purdue">At Purdue</a>
-      <a class="cta" href="#join">Join Us</a>
     </nav>
   </div>
 </header>
@@ -323,12 +316,13 @@ footer a{color:var(--boiler)}
           <a href="https://scholar.google.com/citations?user=IYX6_gsAAAAJ&hl=en" target="_blank" rel="noopener"><span>Google Scholar</span><span>scholar.google.com ↗</span></a>
           <a href="https://www.linkedin.com/in/ze-zhu" target="_blank" rel="noopener"><span>LinkedIn</span><span>linkedin.com/in/ze-zhu ↗</span></a>
           <a href="https://orcid.org/0000-0002-0595-591X" target="_blank" rel="noopener"><span>ORCID</span><span>0000-0002-0595-591X ↗</span></a>
+          <a href="https://www.researchgate.net/profile/Ze-Zhu-2" target="_blank" rel="noopener"><span>ResearchGate</span><span>researchgate.net/profile/Ze-Zhu-2 ↗</span></a>
+          <a href="https://twitter.com/ZeAquaTech" target="_blank" rel="noopener"><span>X</span><span>twitter.com/ZeAquaTech ↗</span></a>
           <a href="https://github.com/zeevzhu" target="_blank" rel="noopener"><span>GitHub</span><span>github.com/zeevzhu ↗</span></a>
           <span><span>Office</span><span>West Lafayette, IN 47907</span></span>
         </div>
         <div class="btn-row">
           <button class="btn" id="copyEmail" type="button">Copy email</button>
-          <a class="btn ghost" href="#join">Work with us</a>
         </div>
       </aside>
 
@@ -714,16 +708,6 @@ footer a{color:var(--boiler)}
     </div>
     <p class="mentor-credit">Portraits: Purdue University (Brown) · Ben-Gurion University of the Negev (Gross) · Wetsus (Keesman).</p>
 
-    <!-- OPENINGS (mirrors reference site) -->
-    <div class="openings" id="join">
-      <h3>Openings</h3>
-      <p><strong>We have openings for postdocs, graduate and undergraduate students.</strong> If you are interested in circular aquaculture, aquaponics, photobioreactors or systems modelling, please send your CV to Prof. Zhu.</p>
-      <div class="btn-row">
-        <a class="btn" href="mailto:zezhu@purdue.edu?subject=Prospective%20student%20%2F%20postdoc%20—%20Zhu%20Research%20Group">Email your CV · zezhu@purdue.edu</a>
-        <button class="btn ghost" id="copyEmail2" type="button">Copy email address</button>
-      </div>
-      <p style="color:var(--muted);font-size:15px;margin-bottom:0">Graduate applicants: please mention your research line (circular bioeconomy, system modeling, or smart aquaculture &amp; AI) in your email.</p>
-    </div>
   </section>
 
   <!-- NEWS -->
@@ -790,7 +774,6 @@ footer a{color:var(--boiler)}
     if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText('zezhu@purdue.edu').then(done,done); } else { done(); }
   }
   document.getElementById('copyEmail').addEventListener('click',copyEmail);
-  document.getElementById('copyEmail2').addEventListener('click',copyEmail);
 
   var totop=document.getElementById('totop');
   window.addEventListener('scroll',function(){
